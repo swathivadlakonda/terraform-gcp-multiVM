@@ -6,6 +6,10 @@ provider "google" {
 }     
 
 resource "google_compute_instance" "instance" {
+    
+    ## this is the main command for creating the multiple vm ##
+    ## name = "${var.instance-name}-${count.index}" ##
+    
   name         = "${var.instance-name}-${count.index}"
   machine_type = "f1-micro"
   count        = 3
